@@ -1,7 +1,7 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [Lê Thành Phong]
+ * MSSV:      [PS47422]
+ * Lớp:       [CS21302]
  *****************************************************************************/
 
 // BÀI 1: XÂY DỰNG CHƯƠNG TRÌNH TÍNH HỌC LỰC  
@@ -16,16 +16,39 @@
 // Học lực kém: 3.5 > điểm
 
 #include <stdio.h>
+#include <string.h>
 
-int main(){
+int main() {
 
     // Khai báo biến
-
+    float diem;
+    char hocLuc[20];
 
     // Nhập dữ liệu
+    printf("Nhap diem cua sinh vien (0-10): ");
+    scanf("%f", &diem);
 
+    // Xử lý và hiển thị kết quả
+    if (diem < 0 || diem > 10) {
+        printf("Diem khong hop le!\n");
+        return 0;
+    }
 
-    // Xử lý, tính toán VÀ Hiển thị kết quả
+    if (diem >= 9) {
+        strcpy(hocLuc, "Xuat sac");
+    } else if (diem >= 8) {
+        strcpy(hocLuc, "Gioi");
+    } else if (diem >= 6.5) {
+        strcpy(hocLuc, "Kha");
+    } else if (diem >= 5) {
+        strcpy(hocLuc, "Trung binh");
+    } else if (diem >= 3.5) {
+        strcpy(hocLuc, "Yeu");
+    } else {
+        strcpy(hocLuc, "Kem");
+    }
+
+    printf("Hoc luc cua sinh vien la: %s\n", hocLuc);
 
     return 0;
 }
